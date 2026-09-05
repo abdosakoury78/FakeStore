@@ -4,6 +4,7 @@ import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component
 import { HomeComponent } from './components/home/home.component';
 import { CategoryComponent } from './components/category/category.component';
 import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 export const routes: Routes = [
     {path: '', component: MainLayoutComponent, children: [
@@ -12,5 +13,6 @@ export const routes: Routes = [
     ]},
     {path: 'auth', component: AuthLayoutComponent, children: [
         {path: '', component: LoginComponent},
+        {path: 'signup', component: SignupComponent}
     ]}
 ];

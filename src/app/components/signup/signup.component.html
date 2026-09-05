@@ -1,0 +1,207 @@
+<div class="signup-page">
+  <div class="container">
+
+    <div class="signup-card">
+
+      <!-- Header -->
+      <div class="signup-header">
+
+        <div class="signup-icon">
+          <i class="fa-solid fa-user-plus"></i>
+        </div>
+
+        <h1>Create Account</h1>
+
+        <p>
+          Join FakeStore and start shopping today.
+        </p>
+
+      </div>
+
+        @if (successMessage) {
+        <div class="alert alert-success">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>{{ successMessage }}</span>
+        </div>
+        }
+
+        @if (errorMessage) {
+        <div class="alert alert-danger">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <span>{{ errorMessage }}</span>
+        </div>
+        }
+      <!-- Form -->
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+
+        <!-- Name -->
+        <div class="form-group">
+
+          <label for="name">Full Name</label>
+
+          <div class="input-wrapper">
+
+            <i class="fa-solid fa-user"></i>
+
+            <input
+              id="name"
+              type="text"
+              formControlName="name"
+              placeholder="Enter your name"
+              class="form-control"
+              [class.is-invalid]="
+                signupForm.controls.name.invalid &&
+                signupForm.controls.name.touched
+              "
+            />
+
+          </div>
+
+          @if (
+            signupForm.controls.name.invalid &&
+            signupForm.controls.name.touched
+          ) {
+            <div class="validation-error">
+
+              @if (signupForm.controls.name.errors?.['required']) {
+                <span>Name is required.</span>
+              }
+
+              @if (signupForm.controls.name.errors?.['minlength']) {
+                <span>Name must be at least 3 characters.</span>
+              }
+
+            </div>
+          }
+
+        </div>
+
+
+        <!-- Email -->
+        <div class="form-group">
+
+          <label for="email">Email Address</label>
+
+          <div class="input-wrapper">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            <input
+              id="email"
+              type="email"
+              formControlName="email"
+              placeholder="Enter your email"
+              class="form-control"
+              [class.is-invalid]="
+                signupForm.controls.email.invalid &&
+                signupForm.controls.email.touched
+              "
+            />
+
+          </div>
+
+          @if (
+            signupForm.controls.email.invalid &&
+            signupForm.controls.email.touched
+          ) {
+            <div class="validation-error">
+
+              @if (signupForm.controls.email.errors?.['required']) {
+                <span>Email is required.</span>
+              }
+
+              @if (signupForm.controls.email.errors?.['email']) {
+                <span>Please enter a valid email address.</span>
+              }
+
+            </div>
+          }
+
+        </div>
+
+
+        <!-- Password -->
+        <div class="form-group">
+
+          <label for="password">Password</label>
+
+          <div class="input-wrapper">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <input
+              id="password"
+              type="password"
+              formControlName="password"
+              placeholder="Enter your password"
+              class="form-control"
+              [class.is-invalid]="
+                signupForm.controls.password.invalid &&
+                signupForm.controls.password.touched
+              "
+            />
+
+          </div>
+
+          @if (
+            signupForm.controls.password.invalid &&
+            signupForm.controls.password.touched
+          ) {
+            <div class="validation-error">
+
+              @if (signupForm.controls.password.errors?.['required']) {
+                <span>Password is required.</span>
+              }
+
+              @if (signupForm.controls.password.errors?.['minlength']) {
+                <span>Password must be at least 6 characters.</span>
+              }
+
+            </div>
+          }
+
+        </div>
+
+
+        <!-- Submit -->
+        <button
+          type="submit"
+          class="btn signup-btn"
+        >
+          Create Account
+
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+
+        <!-- Form Alert -->
+        @if (signupForm.invalid && signupForm.touched) {
+          <div class="form-alert">
+
+            <i class="fa-solid fa-circle-exclamation"></i>
+
+            <span>
+              Please fix the errors above before creating your account.
+            </span>
+
+          </div>
+        }
+
+      </form>
+
+
+      <!-- Login -->
+      <div class="login-link">
+
+        <span>Already have an account?</span>
+
+        <a routerLink="/auth">
+          Sign In
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

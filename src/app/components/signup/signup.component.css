@@ -1,0 +1,297 @@
+/* =========================
+   Signup Page
+========================= */
+
+.signup-page {
+  min-height: calc(100vh - 72px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 4rem 1rem;
+
+  background-color: var(--background-color);
+}
+
+.signup-page .container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* =========================
+   Signup Card
+========================= */
+
+.signup-card {
+  width: 100%;
+  max-width: 500px;
+
+  padding: 2.5rem;
+
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-lg);
+}
+
+
+/* =========================
+   Header
+========================= */
+
+.signup-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.signup-icon {
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 1rem;
+
+  border-radius: 50%;
+
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+
+  font-size: 1.4rem;
+}
+
+.signup-header h1 {
+  margin-bottom: 0.5rem;
+
+  color: var(--text-dark);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.signup-header p {
+  margin: 0;
+
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+
+/* =========================
+   Form
+========================= */
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 0.5rem;
+
+  color: var(--text-dark);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+
+/* =========================
+   Input
+========================= */
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper > i {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.input-wrapper .form-control {
+  min-height: 46px;
+
+  padding-left: 2.7rem;
+
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+
+  color: var(--text-dark);
+  background-color: var(--surface-color);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.input-wrapper .form-control::placeholder {
+  color: #9ca3af;
+}
+
+.input-wrapper .form-control:focus {
+  border-color: var(--primary-color);
+
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+
+/* =========================
+   Signup Button
+========================= */
+
+.signup-btn {
+  width: 100%;
+  min-height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+
+  margin-top: 1.5rem;
+
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: var(--radius-md);
+
+  color: #ffffff;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.signup-btn:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+
+  transform: translateY(-2px);
+
+  box-shadow: var(--shadow-md);
+}
+
+.signup-btn i {
+  transition: transform 0.2s ease;
+}
+
+.signup-btn:hover i {
+  transform: translateX(4px);
+}
+
+
+/* =========================
+   Login Link
+========================= */
+
+.login-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+
+  margin-top: 1.5rem;
+
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.login-link a {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.login-link a:hover {
+  color: var(--primary-hover);
+}
+
+/* =========================
+   Validation
+========================= */
+
+.validation-error {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+
+  margin-top: 0.4rem;
+
+  color: var(--danger-color);
+  font-size: 0.8rem;
+}
+
+.input-wrapper .form-control.is-invalid {
+  border-color: var(--danger-color);
+
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.input-wrapper .form-control.is-invalid:focus {
+  border-color: var(--danger-color);
+
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+
+/* =========================
+   Form Alert
+========================= */
+
+.form-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
+
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  border-radius: var(--radius-md);
+
+  background-color: rgba(220, 38, 38, 0.08);
+
+  color: var(--danger-color);
+
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.form-alert i {
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 576px) {
+
+  .signup-page {
+    padding: 2rem 1rem;
+  }
+
+  .signup-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .signup-header h1 {
+    font-size: 1.6rem;
+  }
+}
