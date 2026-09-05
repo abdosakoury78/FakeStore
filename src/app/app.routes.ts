@@ -5,9 +5,10 @@ import { HomeComponent } from './components/home/home.component';
 import { CategoryComponent } from './components/category/category.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
-    {path: '', component: MainLayoutComponent, children: [
+    {path: '', component: MainLayoutComponent, canActivate:[authGuard],children: [
         {path: '', component: HomeComponent},
         {path: 'categories', component: CategoryComponent}
     ]},

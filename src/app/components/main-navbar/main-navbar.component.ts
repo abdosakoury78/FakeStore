@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-main-navbar',
@@ -8,5 +8,10 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './main-navbar.component.css'
 })
 export class MainNavbarComponent {
-
+  private router = inject(Router);
+  logout() {
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('refresh_token');
+    this.router.navigate(['/auth']);
+  }
 }

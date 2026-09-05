@@ -1,0 +1,295 @@
+.login-page {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1rem;
+  background-color: var(--background-color);
+}
+
+.login-page .container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 500px;
+  padding: 2.5rem;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+
+/* Header */
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+
+  font-size: 1.5rem;
+}
+
+.login-header h1 {
+  margin-bottom: 0.5rem;
+
+  color: var(--text-dark);
+
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.login-header p {
+  margin: 0;
+
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+
+/* Form */
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 0.5rem;
+
+  color: var(--text-dark);
+
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+
+/* Input */
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper > i {
+  position: absolute;
+
+  top: 50%;
+  left: 1rem;
+
+  transform: translateY(-50%);
+
+  color: var(--text-secondary);
+
+  pointer-events: none;
+}
+
+.input-wrapper .form-control {
+  width: 100%;
+
+  padding: 0.75rem 1rem 0.75rem 2.75rem;
+
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+
+  color: var(--text-dark);
+  background-color: var(--surface-color);
+
+  transition: all 0.2s ease;
+}
+
+.input-wrapper .form-control:focus {
+  border-color: var(--primary-color);
+
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+
+  outline: none;
+}
+
+.input-wrapper .form-control::placeholder {
+  color: var(--text-secondary);
+}
+
+
+/* Validation */
+
+.validation-error {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+
+  margin-top: 0.4rem;
+
+  color: var(--danger-color);
+
+  font-size: 0.8rem;
+}
+
+.input-wrapper .form-control.is-invalid {
+  border-color: var(--danger-color);
+
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.input-wrapper .form-control.is-invalid:focus {
+  border-color: var(--danger-color);
+
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+
+/* Login Button */
+
+.login-btn {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+
+  margin-top: 1.5rem;
+
+  padding: 0.8rem 1rem;
+
+  border: none;
+  border-radius: var(--radius-md);
+
+  background-color: var(--primary-color);
+  color: white;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  transition: background-color 0.2s ease;
+}
+
+.login-btn:hover {
+  background-color: var(--primary-hover);
+}
+
+.login-btn i {
+  font-size: 0.85rem;
+}
+
+
+/* Form Alert */
+
+.form-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
+
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  border-radius: var(--radius-md);
+
+  background-color: rgba(220, 38, 38, 0.08);
+  color: var(--danger-color);
+
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.form-alert i {
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+
+/* Success / Error Alerts */
+
+.alert {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  margin-bottom: 1.5rem;
+  padding: 0.8rem 1rem;
+
+  border-radius: var(--radius-md);
+
+  font-size: 0.9rem;
+}
+
+.alert-success {
+  border: 1px solid rgba(22, 163, 74, 0.2);
+
+  background-color: rgba(22, 163, 74, 0.08);
+  color: var(--success-color);
+}
+
+.alert-danger {
+  border: 1px solid rgba(220, 38, 38, 0.2);
+
+  background-color: rgba(220, 38, 38, 0.08);
+  color: var(--danger-color);
+}
+
+
+/* Signup Link */
+
+.signup-link {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+
+  margin-top: 1.75rem;
+
+  font-size: 0.9rem;
+}
+
+.signup-link span {
+  color: var(--text-secondary);
+}
+
+.signup-link a {
+  color: var(--primary-color);
+
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+
+/* Responsive */
+
+@media (max-width: 576px) {
+
+  .login-page {
+    padding: 2rem 1rem;
+  }
+
+  .login-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .login-header h1 {
+    font-size: 1.6rem;
+  }
+
+}

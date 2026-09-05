@@ -1,1 +1,150 @@
-<p>login works!</p>
+<div class="login-page">
+  <div class="container">
+
+    <div class="login-card">
+
+      <div class="login-header">
+        <div class="login-icon">
+          <i class="fa-solid fa-right-to-bracket"></i>
+        </div>
+
+        <h1>Welcome Back</h1>
+
+        <p>
+          Sign in to your FakeStore account.
+        </p>
+      </div>
+
+      @if (successMessage) {
+        <div class="alert alert-success">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>{{ successMessage }}</span>
+        </div>
+      }
+
+      @if (errorMessage) {
+        <div class="alert alert-danger">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <span>{{ errorMessage }}</span>
+        </div>
+      }
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+        <!-- Email -->
+        <div class="form-group">
+
+          <label for="email">Email Address</label>
+
+          <div class="input-wrapper">
+            <i class="fa-solid fa-envelope"></i>
+
+            <input
+              id="email"
+              type="email"
+              formControlName="email"
+              placeholder="Enter your email"
+              class="form-control"
+              [class.is-invalid]="
+                loginForm.controls.email.invalid &&
+                loginForm.controls.email.touched
+              "
+            />
+          </div>
+
+          @if (
+            loginForm.controls.email.invalid &&
+            loginForm.controls.email.touched
+          ) {
+            <div class="validation-error">
+
+              @if (loginForm.controls.email.errors?.['required']) {
+                <span>Email is required.</span>
+              }
+
+              @if (loginForm.controls.email.errors?.['email']) {
+                <span>Please enter a valid email address.</span>
+              }
+
+            </div>
+          }
+
+        </div>
+
+
+        <!-- Password -->
+        <div class="form-group">
+
+          <label for="password">Password</label>
+
+          <div class="input-wrapper">
+            <i class="fa-solid fa-lock"></i>
+
+            <input
+              id="password"
+              type="password"
+              formControlName="password"
+              placeholder="Enter your password"
+              class="form-control"
+              [class.is-invalid]="
+                loginForm.controls.password.invalid &&
+                loginForm.controls.password.touched
+              "
+            />
+          </div>
+
+          @if (
+            loginForm.controls.password.invalid &&
+            loginForm.controls.password.touched
+          ) {
+            <div class="validation-error">
+
+              @if (loginForm.controls.password.errors?.['required']) {
+                <span>Password is required.</span>
+              }
+
+              @if (loginForm.controls.password.errors?.['minlength']) {
+                <span>Password must be at least 6 characters.</span>
+              }
+
+            </div>
+          }
+
+        </div>
+
+
+        <!-- Submit -->
+        <button
+          type="submit"
+          class="btn login-btn"
+        >
+          Sign In
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+
+        @if (loginForm.invalid && loginForm.touched) {
+          <div class="form-alert">
+            <i class="fa-solid fa-circle-exclamation"></i>
+
+            <span>
+              Please fix the errors above before signing in.
+            </span>
+          </div>
+        }
+
+      </form>
+
+
+      <div class="signup-link">
+        <span>Don't have an account?</span>
+
+        <a routerLink="/auth/signup">
+          Create Account
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</div>

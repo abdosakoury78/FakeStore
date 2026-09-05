@@ -1,8 +1,8 @@
 export interface User {
+    id: number;
     email: string;
     password: string;
     name: string;
-    avatar: string;
     role: 'customer' | 'admin';
-    id: number;
+    avatar: string;
 }
