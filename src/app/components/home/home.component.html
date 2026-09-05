@@ -1,0 +1,104 @@
+<section class="hero-section">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <span class="hero-badge">
+          <i class="fa-solid fa-bolt"></i>
+          New Collection
+        </span>
+
+        <h1>
+          Discover Your
+          <span>Perfect Style</span>
+        </h1>
+
+        <p>
+          Explore our latest collection of products and find everything
+          you need in one place.
+        </p>
+
+        <a routerLink="/products" class="btn btn-primary hero-btn">
+          Shop Now
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="hero-icon">
+        <i class="fa-solid fa-store"></i>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="products-section">
+  <div class="container">
+
+    <div class="section-header">
+      <div>
+        <span class="section-label">Our Collection</span>
+        <h2>Featured Products</h2>
+        <p>Check out some of our latest products.</p>
+      </div>
+
+      <a routerLink="/products" class="view-all">
+        View All
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="row g-4">
+
+      @for (product of products.slice(0, 8); track product.id) {
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+
+          <div class="product-card h-100">
+
+            <div class="image-wrapper">
+              <img
+                [src]="product.images[0]"
+                [alt]="product.title"
+                class="product-image"
+              />
+
+              <span class="product-badge">
+                New
+              </span>
+            </div>
+
+            <div class="product-info">
+
+              <span class="product-category">
+                {{ product.category.name }}
+              </span>
+
+              <h3 class="product-title">
+                {{ product.title }}
+              </h3>
+
+              <div class="product-bottom">
+
+                <span class="product-price">
+                  ${{ product.price }}
+                </span>
+
+                <button
+                  type="button"
+                  class="cart-btn"
+                  aria-label="Add to cart"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      }
+
+    </div>
+
+  </div>
+</section>

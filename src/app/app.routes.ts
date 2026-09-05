@@ -1,3 +1,16 @@
 import { Routes } from '@angular/router';
+import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+import { HomeComponent } from './components/home/home.component';
+import { CategoryComponent } from './components/category/category.component';
+import { LoginComponent } from './components/login/login.component';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+    {path: '', component: MainLayoutComponent, children: [
+        {path: '', component: HomeComponent},
+        {path: 'categories', component: CategoryComponent}
+    ]},
+    {path: 'auth', component: AuthLayoutComponent, children: [
+        {path: '', component: LoginComponent},
+    ]}
+];

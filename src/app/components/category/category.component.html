@@ -1,0 +1,63 @@
+<section class="categories-page">
+  <div class="container">
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <span class="page-label">Explore</span>
+
+      <h1>Shop by Category</h1>
+
+      <p>
+        Browse our collection by category and find exactly what you're
+        looking for.
+      </p>
+    </div>
+
+
+    <!-- Categories -->
+    <div class="row g-4">
+
+      @for (category of categories; track category.id) {
+
+        <div class="col-12 col-sm-6 col-lg-4">
+
+          <div class="category-card">
+
+            <div class="category-image-wrapper">
+              <img
+                [src]="category.image"
+                [alt]="category.name"
+                class="category-image"
+              />
+
+              <div class="category-overlay">
+                <span>
+                  Explore
+                  <i class="fa-solid fa-arrow-right"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="category-info">
+              <h2>{{ category.name }}</h2>
+
+              <a
+                [routerLink]="['/products']"
+                [queryParams]="{ category: category.id }"
+                class="category-link"
+              >
+                View Products
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      }
+
+    </div>
+
+  </div>
+</section>
